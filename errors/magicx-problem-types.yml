@@ -1,0 +1,26 @@
+generated: '2026-07-20'
+method: searched
+source: https://ai-autocomplete.com/install/http.md
+docs: https://ai-autocomplete.com/docs/http/api-reference
+format: http-status
+notes: >-
+  The published HTTP integration guide documents error handling by HTTP status code rather
+  than an RFC 9457 problem+json envelope. Captured verbatim from the verify/troubleshoot
+  steps; the full field-by-field error schema lives in the (SPA-rendered) HTTP API reference.
+problems:
+- status: 400
+  title: Bad Request
+  meaning: >-
+    Malformed request. Typically meta.request_id or meta.request_at is missing or not
+    well-formed (both are required server-side).
+  remediation: Ensure meta.request_id (non-empty) and meta.request_at (non-zero, ISO 8601) are populated.
+  source_operation: POST /api/suggest
+- status: 401
+  title: Unauthorized
+  meaning: >-
+    The API key is wrong or the wrong type for the integration path (e.g. a secret key used
+    where a public key is expected, or an expired access token).
+  remediation: >-
+    Re-copy the key from https://ai-autocomplete.com/account/keys and confirm the prefix
+    (pk_v1_ for client, sk_v1_ for server-side). For access tokens, force-refresh once and retry.
+  source_operation: POST /api/suggest, POST /api/auth/token

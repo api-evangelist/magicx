@@ -1,0 +1,53 @@
+# AI Autocomplete
+
+> AI Autocomplete is a drop-in SDK that helps users discover and complete actions in real time inside any text box. It guides users on what to type, turning a blank input into instant intent — 10X faster and 5X cheaper than traditional LLMs, with ~200ms responses. Integrate in minutes via a native SDK (React, Angular, Vanilla JS, Swift) or the HTTP API.
+
+Important notes:
+
+- AI Autocomplete works with any stack via native SDKs (React, Angular, Vanilla JS, Swift) or a framework-agnostic HTTP API. Vue support is coming soon.
+- Auth uses two key types: public keys (`pk_v1_…`, safe to ship in the browser) and secret keys (`sk_v1_…`, server-only) that exchange for short-lived access tokens (`at_v1_…`). Public keys are the quickest start; the access-token flow is recommended for production.
+- If you are an AI coding agent installing the SDK, start from the per-framework prompt under "Agent install prompts" and follow it in order.
+- Docs follow the pattern `/docs/{framework}/{section}`. Frameworks: `react`, `angular`, `vanilla`, `swift`, `http`. SDK frameworks have sections `getting-started`, `integration-tiers`, `api-reference`, `authentication`, `styling`, `advanced`; the `http` framework has `getting-started`, `authentication`, `api-reference`, `advanced`. The sections below link a representative subset.
+
+## Agent install prompts
+
+- [Install in React](https://ai-autocomplete.com/install/react.md): Agent-ready steps to add the React SDK — integration tiers, auth modes, styling, and the production access-token flow.
+- [Install in Angular](https://ai-autocomplete.com/install/angular.md): Agent-ready steps to add the Angular SDK end to end.
+- [Install in Vanilla JS](https://ai-autocomplete.com/install/vanilla.md): Agent-ready steps to add the SDK to any plain-JavaScript page or framework.
+- [Install in Swift](https://ai-autocomplete.com/install/swift.md): Agent-ready steps to add the native Swift SDK to an iOS app.
+- [Install via HTTP API](https://ai-autocomplete.com/install/http.md): Agent-ready steps to integrate directly over HTTP with no SDK.
+
+## Getting started
+
+- [React getting started](https://ai-autocomplete.com/docs/react/getting-started): Install the SDK and render your first autocomplete in a React app.
+- [Angular getting started](https://ai-autocomplete.com/docs/angular/getting-started): Add AI Autocomplete to an Angular project.
+- [Vanilla JS getting started](https://ai-autocomplete.com/docs/vanilla/getting-started): Drop the SDK into any plain-JavaScript page or framework.
+- [Swift getting started](https://ai-autocomplete.com/docs/swift/getting-started): Integrate the native Swift SDK in an iOS app.
+- [HTTP API getting started](https://ai-autocomplete.com/docs/http/getting-started): Call the autocomplete service directly over HTTP, no SDK required.
+
+## Integration and customization
+
+- [React integration tiers](https://ai-autocomplete.com/docs/react/integration-tiers): Choose how deeply to integrate — drop-in widget, customized SDK, or raw API.
+- [React styling](https://ai-autocomplete.com/docs/react/styling): Theme and lay out the widget to match your product (light/dark, colors, spacing).
+- [React advanced](https://ai-autocomplete.com/docs/react/advanced): Advanced configuration, custom data, and product-specific logic.
+
+## API reference and authentication
+
+- [HTTP API reference](https://ai-autocomplete.com/docs/http/api-reference): Endpoints, request/response shapes, parameters, and error codes.
+- [HTTP API authentication](https://ai-autocomplete.com/docs/http/authentication): Secret keys (`sk_v1_…`) and short-lived access tokens (`at_v1_…`); the server-to-server auth flow.
+- [React API reference](https://ai-autocomplete.com/docs/react/api-reference): SDK components, props, and methods.
+- [React authentication](https://ai-autocomplete.com/docs/react/authentication): Wiring credentials into the SDK.
+- [HTTP API advanced](https://ai-autocomplete.com/docs/http/advanced): Advanced HTTP usage and edge cases.
+
+## Product and pricing
+
+- [Home](https://ai-autocomplete.com/): What AI Autocomplete is, how it works, and why it converts — the next evolution of autocomplete for any platform.
+- [Pricing](https://ai-autocomplete.com/other/pricing): Simple, usage-based pricing. Start free, scale as you grow — no per-seat fees.
+- [FAQ](https://ai-autocomplete.com/other/faqs): How it works, integration, customization, privacy, security, pricing, and enterprise readiness.
+- [Enterprise](https://ai-autocomplete.com/other/enterprise): SSO, deployment/self-hosting options, compliance, personalization, product-catalog connection, and dedicated support.
+
+## Optional
+
+- [Privacy policy](https://ai-autocomplete.com/legal/privacy): How AI Autocomplete collects, uses, and protects your data.
+- [Terms of service](https://ai-autocomplete.com/legal/terms): The terms governing your use of AI Autocomplete.
+- [Sitemap](https://ai-autocomplete.com/sitemap.xml): Full machine-readable list of public URLs.

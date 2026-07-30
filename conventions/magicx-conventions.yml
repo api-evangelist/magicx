@@ -1,0 +1,44 @@
+generated: '2026-07-20'
+method: searched
+source: https://ai-autocomplete.com/install/http.md
+docs: https://ai-autocomplete.com/docs/http/getting-started
+summary: >-
+  Cross-cutting request/response semantics for the AI Autocomplete HTTP API, harvested from
+  the published HTTP integration guide. The API is a single-endpoint, session-oriented
+  autocomplete loop; there is no documented idempotency-key contract, no pagination, and no
+  cursor model (each request is a stateless suggestion turn keyed by a client-generated
+  session_id).
+authentication:
+  style: bearer-token
+  detail: See authentication/magicx-authentication.yml (pk_v1_/sk_v1_/at_v1_ keys).
+request_envelope:
+  shape: '{ data: { raw_query, completed_params[] }, meta: { request_id, request_at, session_id } }'
+  required: [meta.request_id, meta.request_at]
+  content_type: application/json
+query_model:
+  description: >-
+    The query is tracked as two parallel strings — a client-only display string and a
+    raw_query with {{TYPE_N}} placeholders. completed_params[] maps each placeholder to its
+    picked text. The server only ever sees raw_query + completed_params.
+request_tracing:
+  request_id: meta.request_id (UUIDv4, per keystroke) — echoed on the response for stale-response matching
+  request_at: meta.request_at (ISO 8601)
+session:
+  field: meta.session_id
+  detail: UUIDv4 minted when autocomplete starts and reused across keystrokes in one session; reset rotates it.
+idempotency:
+  supported: false
+  detail: No idempotency-key header/param is documented; requests are read-only suggestion turns.
+pagination:
+  supported: false
+rate_limit_signaling:
+  documented: false
+versioning:
+  scheme: key-and-path
+  detail: Credentials and the endpoint path are v1 (pk_v1_/sk_v1_/at_v1_, /api/*).
+loop_concerns:
+  debounce: 100-200ms recommended (prefer 100ms)
+  cancellation: abort in-flight request when a newer keystroke fires
+  stale_responses: discard responses whose meta.request_id does not match the latest request
+error_envelope:
+  detail: See errors/magicx-problem-types.yml (HTTP status codes 400/401 documented).

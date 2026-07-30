@@ -1,0 +1,34 @@
+generated: '2026-07-20'
+method: searched
+source: https://registry.npmjs.org/-/v1/search?text=magicx-eng
+notes: >-
+  Official first-party AI Autocomplete client SDKs published under the @magicx-eng npm org.
+  A native Swift SDK is documented (docs/swift) but is not published to a public registry
+  (distributed via Swift Package Manager / direct integration) so it is not listed with a
+  registry URL here. Vue support is documented as "coming soon".
+packages:
+- language: javascript
+  registry: npm
+  name: '@magicx-eng/ai-autocomplete-react'
+  version: 0.6.4
+  url: https://www.npmjs.com/package/@magicx-eng/ai-autocomplete-react
+  install: npm install @magicx-eng/ai-autocomplete-react
+  license: MIT
+  official: true
+  description: AI Autocomplete React SDK — guided autocomplete with pill-based input and dropdown suggestions
+- language: javascript
+  registry: npm
+  name: '@magicx-eng/ai-autocomplete-angular'
+  version: 0.5.4
+  url: https://www.npmjs.com/package/@magicx-eng/ai-autocomplete-angular
+  install: npm install @magicx-eng/ai-autocomplete-angular
+  official: true
+  description: AI Autocomplete Angular SDK — guided autocomplete with pill-based input
+- language: javascript
+  registry: npm
+  name: '@magicx-eng/ai-autocomplete-vanilla'
+  version: 0.5.4
+  url: https://www.npmjs.com/package/@magicx-eng/ai-autocomplete-vanilla
+  install: npm install @magicx-eng/ai-autocomplete-vanilla
+  official: true
+  description: AI Autocomplete — framework-agnostic vanilla JS library

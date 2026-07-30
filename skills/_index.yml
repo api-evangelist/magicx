@@ -1,0 +1,20 @@
+generated: '2026-07-20'
+method: searched
+source: https://ai-autocomplete.com/llms.txt
+notes: >-
+  Provider-published agent install prompts saved verbatim from the AI Autocomplete docs
+  (referenced from llms.txt under "Agent install prompts"). These are official operating
+  instructions an AI coding agent follows to integrate the product; grounded in the real
+  POST /api/suggest and POST /api/auth/token operations. Additional per-framework prompts
+  exist at /install/{angular,vanilla,swift}.md.
+skills:
+- file: magicx-http-install.md
+  name: Integrate AI Autocomplete over the HTTP API
+  api: AI Autocomplete API
+  source: https://ai-autocomplete.com/install/http.md
+  operations: [POST /api/suggest, POST /api/auth/token]
+- file: magicx-react-install.md
+  name: Install the AI Autocomplete React SDK
+  api: AI Autocomplete API
+  source: https://ai-autocomplete.com/install/react.md
+  operations: [POST /api/suggest, POST /api/auth/token]

@@ -1,0 +1,39 @@
+generated: '2026-07-20'
+method: searched
+source: https://ai-autocomplete.com/docs/http/authentication
+docs: https://ai-autocomplete.com/docs/http/authentication
+summary:
+  types: [http]
+  scheme: bearer
+  key_types: [public, secret, access-token]
+  token_mint_endpoint: https://api.ai-autocomplete.com/api/auth/token
+description: >-
+  AI Autocomplete authenticates every request to https://api.ai-autocomplete.com with an
+  HTTP Bearer token. Three credential types are issued, all created from the account keys
+  page (https://ai-autocomplete.com/account/keys).
+schemes:
+- name: publicKey
+  type: http
+  scheme: bearer
+  prefix: pk_v1_
+  usage: >-
+    Safe to ship in client bundles / browser. Sent as `Authorization: Bearer pk_v1_...`
+    directly from the client. Recommended for prototypes and unscoped public credentials.
+  source: https://ai-autocomplete.com/docs/http/authentication
+- name: secretKey
+  type: http
+  scheme: bearer
+  prefix: sk_v1_
+  usage: >-
+    Server-only. Used server-to-server directly, or (recommended) exchanged for a
+    short-lived access token via POST /api/auth/token. Never ship in client code.
+  source: https://ai-autocomplete.com/docs/http/authentication
+- name: accessToken
+  type: http
+  scheme: bearer
+  prefix: at_v1_
+  usage: >-
+    Short-lived token minted from a secret key on the customer's backend and forwarded to
+    the browser/mobile client. Recommended for production. Response of the token endpoint:
+    { access_token, expires_at (unix seconds), token_type: Bearer }.
+  source: https://ai-autocomplete.com/docs/http/authentication

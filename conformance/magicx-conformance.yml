@@ -1,0 +1,26 @@
+generated: '2026-07-20'
+method: searched
+source: https://ai-autocomplete.com/other/pricing
+docs: https://ai-autocomplete.com/other/enterprise
+standards:
+- id: soc2
+  conforms: true
+  evidence: >-
+    The Enterprise plan advertises "SOC 2 compliance" on the pricing page; the enterprise
+    page lists compliance among its offerings.
+  source: https://ai-autocomplete.com/other/pricing
+- id: http-bearer-auth
+  conforms: true
+  evidence: All API calls use HTTP Bearer tokens (pk_v1_/sk_v1_/at_v1_).
+  source: https://ai-autocomplete.com/docs/http/authentication
+- id: oauth2
+  conforms: false
+  evidence: >-
+    Not standard OAuth 2.0. Uses a proprietary secret-key -> short-lived-access-token exchange
+    rather than RFC 6749 grant flows.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors are conveyed by HTTP status code, not application/problem+json.
+- id: openapi
+  conforms: false
+  evidence: No published OpenAPI/Swagger definition was found.
