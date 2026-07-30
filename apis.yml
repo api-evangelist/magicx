@@ -1,8 +1,25 @@
 aid: magicx
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/magicx.png
 name: MagicX
-description: 'MagicX is a company surfaced as a portfolio company of forerunner-ventures and added to
-  the API Evangelist network as a stub for enrichment. Sector: ai. This profile is a lead awaiting the
-  enrichment pipeline.'
+description: 'MagicX Inc. builds software that lets people take actions instantly from any text
+  box. Its flagship developer product, AI Autocomplete, is a drop-in SDK and HTTP API that turns
+  a blank input into instant intent — guiding users on what to type with roughly 200ms suggestions,
+  delivered as native SDKs for React, Angular, Vanilla JS and Swift or a framework-agnostic HTTP
+  API. Auth uses public, secret, and short-lived access-token keys, and pricing is usage-based per
+  prediction with a SOC 2 enterprise tier. MagicX also ships Hero Assistant, a consumer AI assistant.
+  The company is backed by Forerunner Ventures.'
 url: https://raw.githubusercontent.com/api-evangelist/magicx/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,12 +28,43 @@ x-backed-by:
 x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 11
+  pass: local-v1
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
-- Ai
-apis: []
+- AI
+- Autocomplete
+- Developer Tools
+- SDK
+- Natural Language
+- Productivity
+- Machine Learning
+apis:
+- name: AI Autocomplete API
+  description: 'Framework-agnostic HTTP API behind the AI Autocomplete SDKs. A single POST
+    /api/suggest endpoint drives keystroke-by-keystroke guided autocomplete over a placeholder-based
+    query model, with a POST /api/auth/token endpoint that exchanges a secret key for a short-lived
+    access token. Bearer auth with public (pk_v1_), secret (sk_v1_) and access-token (at_v1_) keys.'
+  humanURL: https://ai-autocomplete.com/docs/http/getting-started
+  baseURL: https://api.ai-autocomplete.com
+  tags:
+  - Autocomplete
+  - AI
+  - NLP
+  properties:
+  - type: Documentation
+    url: https://ai-autocomplete.com/docs
+  - type: APIReference
+    url: https://ai-autocomplete.com/docs/http/api-reference
+  - type: GettingStarted
+    url: https://ai-autocomplete.com/docs/http/getting-started
+  - type: Authentication
+    url: https://ai-autocomplete.com/docs/http/authentication
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +73,43 @@ maintainers:
 common:
 - type: Website
   url: https://magicx.ai
+- type: DeveloperPortal
+  url: https://ai-autocomplete.com/
+- type: Documentation
+  url: https://ai-autocomplete.com/docs
+- type: APIReference
+  url: https://ai-autocomplete.com/docs/http/api-reference
+- type: GettingStarted
+  url: https://ai-autocomplete.com/docs/http/getting-started
+- type: Pricing
+  url: https://ai-autocomplete.com/other/pricing
+- type: HelpCenter
+  url: https://ai-autocomplete.com/other/faqs
+- type: Login
+  url: https://ai-autocomplete.com/account/keys
+- type: TermsOfService
+  url: https://ai-autocomplete.com/legal/terms
+- type: PrivacyPolicy
+  url: https://ai-autocomplete.com/legal/privacy
+- type: Compliance
+  url: https://ai-autocomplete.com/other/enterprise
+- type: LLMsTxt
+  url: llms/magicx-llms.txt
+- type: Packages
+  url: packages/magicx-packages.yml
+- type: SDKs
+  url: packages/magicx-packages.yml
+- type: Authentication
+  url: authentication/magicx-authentication.yml
+- type: Conventions
+  url: conventions/magicx-conventions.yml
+- type: ErrorCatalog
+  url: errors/magicx-problem-types.yml
+- type: MCPServer
+  url: mcp/magicx-mcp.yml
+- type: Conformance
+  url: conformance/magicx-conformance.yml
+- type: DomainSecurity
+  url: security/magicx-domain-security.yml
+- type: AgentSkill
+  url: skills/_index.yml
