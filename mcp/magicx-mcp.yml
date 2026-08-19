@@ -2,22 +2,24 @@ generated: '2026-07-20'
 method: derived
 status: candidate
 source: https://ai-autocomplete.com/install/http.md
-notes: >-
-  No official hosted/remote MCP server was found for MagicX / AI Autocomplete (no listing in
-  the MCP registry, npm @modelcontextprotocol, or the docs). This is a DERIVED candidate tool
-  list mapping the two documented HTTP operations to MCP tools — a starting point, not a
-  published server.
+notes: No official hosted/remote MCP server was found for MagicX / AI Autocomplete (no listing in the
+  MCP registry, npm @modelcontextprotocol, or the docs). This is a DERIVED candidate tool list mapping
+  the two documented HTTP operations to MCP tools — a starting point, not a published server.
 server:
   name: ai-autocomplete
   transport: http
 tools:
 - name: suggest
-  description: >-
-    Get the next set of autocomplete suggestions for a guided-input session. Sends the current
+  description: Get the next set of autocomplete suggestions for a guided-input session. Sends the current
     raw_query (with {{TYPE_N}} placeholders) and completed_params; returns data.suggestions[].
   source_operation: POST https://api.ai-autocomplete.com/api/suggest
 - name: mint_access_token
-  description: >-
-    Exchange a secret key for a short-lived access token (at_v1_) scoped to a product_id.
-    Returns { access_token, expires_at, token_type }.
+  description: Exchange a secret key for a short-lived access token (at_v1_) scoped to a product_id. Returns
+    { access_token, expires_at, token_type }.
   source_operation: POST https://api.ai-autocomplete.com/api/auth/token
+deployment:
+  mode: none
+  verified: derived
+  tools: 2
+  checked: '2026-08-12'
+  source: catalog MCP census
