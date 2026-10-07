@@ -1,0 +1,34 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-07'
+method: searched
+source: https://ai-autocomplete.com/other/pricing
+sources:
+- https://ai-autocomplete.com/other/pricing
+provenance:
+  tool: all/0-working/economics/harvest_pricing.py
+  run: 20261007T104522
+  grounding: every price_text was found verbatim in the fetched page text
+audience: developer-api
+pricing_basis: per-call
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-07'
+  managed_tier: Basic
+published: true
+note: 'Two tiers: Basic with free prediction allowance then per-prediction price; Enterprise is custom/contact
+  us.'
+plan_count: 2
+currency: USD
+plans:
+- name: Basic
+  price_text: 100,000 free predictions, then $0.0003 *
+  currency: USD
+  period: per-use
+  unit: prediction
+  included_quota: 100,000 free predictions
+  overage: $0.0003 per prediction
+- name: Enterprise
+  price_text: Custom to needs
+  period: none
+  included_quota: Any complex logic, highest accuracy; SOC 2; Fastest; Dedicated support
